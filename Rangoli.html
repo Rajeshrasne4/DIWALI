@@ -1,0 +1,969 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  *{
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0%;
+  }
+  body {
+    background-color: #f0f0f0;
+    text-align: center;
+  }
+
+  .dot {
+    width: 15px;
+    height: 15px;
+    background-color: #f00; /* You can change the color here */
+    border-radius: 50%;
+    position: absolute;
+    opacity: 1; /* Initially invisible */
+    transition: opacity 1s; /* Slow transition speed */
+  }
+
+  .center-dot {
+    top: 300px;
+    left: 648px;
+    width: 20px;
+    height: 20px;
+  }
+
+  #upper-dot-1 {
+    top: 265px; /* 300px (center) - 50px (distance) */
+    left: 650px; /* Same as center dot */
+  }
+  
+  #upper-dot-2 {
+    top: 230px; /* 300px (center) - 50px (distance) */
+    left: 650px; /* Same as center dot */
+  }
+
+  #upper-dot-3 {
+    top: 195px; /* 300px (center) - 50px (distance) */
+    left: 650px; /* Same as center dot */
+  }
+
+  #upper-dot-4 {
+    top: 160px; /* 300px (center) - 50px (distance) */
+    left: 650px; /* Same as center dot */
+  }
+
+  #upper-dot-5 {
+    top: 125px; /* 300px (center) - 50px (distance) */
+    left: 650px; /* Same as center dot */
+  }
+
+  #upper-dot-6 {
+    top: 90px; /* 300px (center) - 50px (distance) */
+    left: 650px; /* Same as center dot */
+  }
+
+  #lower-dot-1{
+    top: 335px; /* 300px (center) - 50px (distance) */
+    left: 650px;
+  }
+  #lower-dot-2{
+    top: 370px; /* 300px (center) - 50px (distance) */
+    left: 650px; 
+}
+#lower-dot-3{
+    top: 405px; /* 300px (center) - 50px (distance) */
+    left: 650px; 
+}
+#lower-dot-4{
+    top: 440px; /* 300px (center) - 50px (distance) */
+    left: 650px;  
+}
+#lower-dot-5{
+    top: 475px; /* 300px (center) - 50px (distance) */
+    left: 650px;   
+}
+#lower-dot-6{
+    top: 510px; /* 300px (center) - 50px (distance) */
+    left: 650px;
+} 
+
+
+#right-dot-1{
+  top: 300px; /* 300px (center) - 50px (distance) */
+    left: 683px;
+}
+#right-dot-2{
+  top: 300px; /* 300px (center) - 50px (distance) */
+    left: 718px;
+}
+#right-dot-3{
+  top: 300px; /* 300px (center) - 50px (distance) */
+    left: 753px;
+}
+#right-dot-4{
+  top: 300px; /* 300px (center) - 50px (distance) */
+    left: 788px;
+}
+#right-dot-5{
+  top: 300px; /* 300px (center) - 50px (distance) */
+    left: 823px;
+}
+#right-dot-6{
+  top: 300px; /* 300px (center) - 50px (distance) */
+    left: 858px;
+}
+
+#left-dot-1{
+  top: 300px; /* 300px (center) - 50px (distance) */
+    left: 613px;
+}
+#left-dot-2{
+  top: 300px; /* 300px (center) - 50px (distance) */
+    left: 578px;
+}
+#left-dot-3{
+  top: 300px; /* 300px (center) - 50px (distance) */
+    left: 543px;
+}
+#left-dot-4{
+  top: 300px; /* 300px (center) - 50px (distance) */
+    left: 508px;
+}
+#left-dot-5{
+  top: 300px; /* 300px (center) - 50px (distance) */
+    left: 473px;
+}
+#left-dot-6{
+  top: 300px; /* 300px (center) - 50px (distance) */
+  left: 438px;
+}
+
+#upper-right-dot-1 {
+  top: 273px; /* 300px (center) - 50px (distance) */
+  left: 676px; /* Adjust the left position as needed */
+}
+
+#upper-right-dot-2 {
+  top: 246px; /* Same as upper-dot-2 */
+  left: 699px;
+}
+
+#upper-right-dot-3 {
+  top: 219px; /* Same as upper-dot-3 */
+  left: 722px; /* Adjust the left position as needed */
+}
+
+#upper-right-dot-4 {
+  top: 192px; /* Same as upper-dot-4 */
+  left: 745px; /* Adjust the left position as needed */
+}
+
+#upper-right-dot-5 {
+  top: 165px; /* Same as upper-dot-5 */
+  left: 768px; /* Adjust the left position as needed */
+}
+
+#upper-right-dot-6 {
+  top: 138px; /* Same as upper-dot-6 */
+  left: 791px; /* Adjust the left position as needed */
+}
+
+#right-lower-dot-1{
+  top:327px;
+  left: 676px; 
+}
+#right-lower-dot-2{
+  top:354px;
+  left: 699px; 
+  }
+
+#right-lower-dot-3{
+  top:381px;
+  left: 722px; 
+  
+}
+#right-lower-dot-4{
+  top:408px;
+  left: 745px;
+  }
+#right-lower-dot-5{
+  top:435px;
+  left: 768px;
+  }
+#right-lower-dot-6{
+  top:462px;
+  left: 791px;
+  }
+#lower-left-dot-1{
+  top:327px;
+  left: 620px;
+}
+#lower-left-dot-2{
+  top:354px;
+  left: 597px;
+}
+#lower-left-dot-3{
+  top:381px;
+  left: 574px;
+}
+#lower-left-dot-4{
+  top:408px;
+  left: 551px;
+}
+#lower-left-dot-5{
+  top:435px;
+  left: 528px;
+}
+#lower-left-dot-6{
+  top:462px;
+  left: 505px;
+}
+
+#left-upper-dot-1{
+  top:273px;
+  left:620px;
+}
+#left-upper-dot-2{
+  top:246px;
+  left:597px;
+}
+#left-upper-dot-3{
+  top:219px;
+  left:574px;
+}
+#left-upper-dot-4{
+  top:192px;
+  left:551px;
+}
+#left-upper-dot-5{
+  top:165px;
+  left:528px;
+}
+#left-upper-dot-6{
+  top:138px;
+  left:505px;
+}
+
+#svg1{
+  position: absolute;
+  top: 0px; /* 300px (center) - 50px (distance) */
+    left: 0px;
+  stroke:rgb(255,0,0);
+    stroke-width:4px;
+    opacity: 0; /* Initially invisible */
+    transition: opacity 1s;
+    z-index: -1;
+  }
+
+  #svg2{
+  position: absolute;
+  top: 0px; /* 300px (center) - 50px (distance) */
+    left: 0px;
+  stroke:rgb(255,0,0);
+    stroke-width:4px;
+    opacity: 0; /* Initially invisible */
+    transition: opacity 1s;
+    z-index: -1;
+  }
+
+
+  #svg3{
+  position: absolute;
+  top: 0px; /* 300px (center) - 50px (distance) */
+    left: 0px;
+  stroke:rgb(255,0,0);
+    stroke-width:4px;
+    opacity: 0; /* Initially invisible */
+    transition: opacity 1s;
+    z-index: -1;
+  }
+
+  #svg4{
+  position: absolute;
+  top: 0px; /* 300px (center) - 50px (distance) */
+    left: 0px;
+  stroke:rgb(255,0,0);
+    stroke-width:4px;
+    opacity: 0; /* Initially invisible */
+    transition: opacity 1s;
+    z-index: -1;
+  }
+
+  #svg5{
+  position: absolute;
+  top: 0px; /* 300px (center) - 50px (distance) */
+    left: 0px;
+  stroke:rgb(255,0,0);
+    stroke-width:4px;
+    opacity: 0; /* Initially invisible */
+    transition: opacity 1s;
+    z-index: -1;
+  }
+
+  #svg6{
+  position: absolute;
+  top: 0px; /* 300px (center) - 50px (distance) */
+    left: 0px;
+  stroke:rgb(255,0,0);
+    stroke-width:4px;
+    opacity: 0; /* Initially invisible */
+    transition: opacity 1s;
+    z-index: -1;
+  }
+
+  #svg7{
+  position: absolute;
+  top: 0px; /* 300px (center) - 50px (distance) */
+    left: 0px;
+  stroke:rgb(255,0,0);
+    stroke-width:4px;
+    opacity: 0; /* Initially invisible */
+    transition: opacity 1s;
+    z-index: -1;
+  }
+
+  #svg8{
+  position: absolute;
+  top: 0px; /* 300px (center) - 50px (distance) */
+    left: 0px;
+  stroke:rgb(255,0,0);
+    stroke-width:4px;
+    opacity: 0; /* Initially invisible */
+    transition: opacity 1s;
+    z-index: -1;
+  }
+
+  #svg9{
+  position: absolute;
+  top: 0px; /* 300px (center) - 50px (distance) */
+    left: 0px;
+  stroke:rgb(255,0,0);
+    stroke-width:4px;
+    opacity: 0; /* Initially invisible */
+    transition: opacity 1s;
+    z-index: -1;
+  }
+
+
+  #svg10{
+  position: absolute;
+  top: 0px; /* 300px (center) - 50px (distance) */
+    left: 0px;
+  stroke:rgb(255,0,0);
+    stroke-width:4px;
+    opacity: 0; /* Initially invisible */
+    transition: opacity 1s;
+    z-index: -1;
+  }
+
+  #svg11{
+  position: absolute;
+  top: 0px; /* 300px (center) - 50px (distance) */
+    left: 0px;
+  stroke:rgb(255,0,0);
+    stroke-width:4px;
+    opacity: 0; /* Initially invisible */
+    transition: opacity 1s;
+    z-index: -1;
+  }
+
+  #svg12{
+  position: absolute;
+  top: 0px; /* 300px (center) - 50px (distance) */
+    left: 0px;
+  stroke:rgb(255,0,0);
+    stroke-width:4px;
+    opacity: 0; /* Initially invisible */
+    transition: opacity 1s;
+    z-index: -1;
+  }
+
+  #svg13{
+  position: absolute;
+  top: 0px; /* 300px (center) - 50px (distance) */
+    left: 0px;
+  stroke:rgb(255,0,0);
+    stroke-width:4px;
+    opacity: 0; /* Initially invisible */
+    transition: opacity 1s;
+    z-index: -1;
+  }
+
+  #svg14{
+  position: absolute;
+  top: 0px; /* 300px (center) - 50px (distance) */
+    left: 0px;
+  stroke:rgb(255,0,0);
+    stroke-width:4px;
+    opacity: 0; /* Initially invisible */
+    transition: opacity 1s;
+    z-index: -1;
+  }
+
+  #svg15{
+  position: absolute;
+  top: 0px; /* 300px (center) - 50px (distance) */
+    left: 0px;
+  stroke:rgb(255,0,0);
+    stroke-width:4px;
+    opacity: 0; /* Initially invisible */
+    transition: opacity 1s;
+    z-index: -1;
+  }
+
+  #svg16{
+  position: absolute;
+  top: 0px; /* 300px (center) - 50px (distance) */
+    left: 0px;
+  stroke:rgb(255,0,0);
+    stroke-width:4px;
+    opacity: 0; /* Initially invisible */
+    transition: opacity 1s;
+    z-index: -1;
+  }
+
+  #svg17{
+  position: absolute;
+  top: 0px; /* 300px (center) - 50px (distance) */
+    left: 0px;
+  stroke:rgb(255,0,0);
+    stroke-width:4px;
+    opacity: 0; /* Initially invisible */
+    transition: opacity 1s;
+    z-index: -1;
+  }
+
+  #svg18{
+  position: absolute;
+  top: 0px; /* 300px (center) - 50px (distance) */
+    left: 0px;
+  stroke:rgb(255,0,0);
+    stroke-width:4px;
+    opacity: 0; /* Initially invisible */
+    transition: opacity 1s;
+    z-index: -1;
+  }
+
+  #svg19{
+  position: absolute;
+  top: 0px; /* 300px (center) - 50px (distance) */
+    left: 0px;
+  stroke:rgb(255,0,0);
+    stroke-width:4px;
+    opacity: 1; /* Initially invisible */
+    transition: opacity 1s;
+    z-index: -1;
+  }
+
+  #svg20{
+  position: absolute;
+  top: 0px; /* 300px (center) - 50px (distance) */
+    left: 0px;
+  stroke:rgb(255,0,0);
+    stroke-width:4px;
+    opacity: 1; /* Initially invisible */
+    transition: opacity 1s;
+    z-index: -1;
+  }
+
+  #svg21{
+  position: absolute;
+  top: 0px; /* 300px (center) - 50px (distance) */
+    left: 0px;
+  stroke:rgb(255,0,0);
+    stroke-width:4px;
+    opacity: 1; /* Initially invisible */
+    transition: opacity 1s;
+    z-index: -1;
+  }
+
+  #svg22{
+  position: absolute;
+  top: 0px; /* 300px (center) - 50px (distance) */
+    left: 0px;
+  stroke:rgb(255,0,0);
+    stroke-width:4px;
+    opacity: 1; /* Initially invisible */
+    transition: opacity 1s;
+    z-index: -1;
+  }
+
+  #svg23{
+  position: absolute;
+  top: 0px; /* 300px (center) - 50px (distance) */
+    left: 0px;
+  stroke:rgb(255,0,0);
+    stroke-width:4px;
+    opacity: 1; /* Initially invisible */
+    transition: opacity 1s;
+    z-index: -1;
+  }
+
+  #svg24{
+  position: absolute;
+  top: 0px; /* 300px (center) - 50px (distance) */
+    left: 0px;
+  stroke:rgb(255,0,0);
+    stroke-width:4px;
+    opacity: 1; /* Initially invisible */
+    transition: opacity 1s;
+    z-index: -1;
+  }
+  #svg25{
+  position: absolute;
+  top: 0px; /* 300px (center) - 50px (distance) */
+    left: 0px;
+  stroke:rgb(255,0,0);
+    stroke-width:4px;
+    opacity: 1; /* Initially invisible */
+    transition: opacity 1s;
+    z-index: -1;
+  }
+
+  #svg26{
+  position: absolute;
+  top: 0px; /* 300px (center) - 50px (distance) */
+    left: 0px;
+  stroke:rgb(255,0,0);
+    stroke-width:4px;
+    opacity: 1; /* Initially invisible */
+    transition: opacity 1s;
+    z-index: -1;
+  }
+
+  #svg27{
+  position: absolute;
+  top: 0px; /* 300px (center) - 50px (distance) */
+    left: 0px;
+  stroke:rgb(255,0,0);
+    stroke-width:4px;
+    opacity: 1; /* Initially invisible */
+    transition: opacity 1s;
+    z-index: -1;
+  }
+
+  #svg28{
+  position: absolute;
+  top: 0px; /* 300px (center) - 50px (distance) */
+    left: 0px;
+  stroke:rgb(255,0,0);
+    stroke-width:4px;
+    opacity: 1; /* Initially invisible */
+    transition: opacity 1s;
+    z-index: -1;
+  }
+
+  #svg29{
+  position: absolute;
+  top: 0px; /* 300px (center) - 50px (distance) */
+    left: 0px;
+  stroke:rgb(255,0,0);
+    stroke-width:4px;
+    opacity: 1; /* Initially invisible */
+    transition: opacity 1s;
+    z-index: -1;
+  }
+
+  #svg30{
+  position: absolute;
+  top: 0px; /* 300px (center) - 50px (distance) */
+    left: 0px;
+  stroke:rgb(255,0,0);
+    stroke-width:4px;
+    opacity: 1; /* Initially invisible */
+    transition: opacity 1s;
+    z-index: -1;
+  }
+</style>
+</head>
+<body>
+  <div class="dot center-dot" id="center-dot"></div>
+
+  <div class="dot upper-dots" id="upper-dot-1"></div>
+  <div class="dot upper-dots" id="upper-dot-2"></div>
+  <div class="dot upper-dots" id="upper-dot-3"></div>
+  <div class="dot upper-dots" id="upper-dot-4"></div>
+  <div class="dot upper-dots" id="upper-dot-5"></div>
+  <div class="dot upper-dots" id="upper-dot-6"></div>
+
+  <div class="dot upper-right-dots" id="upper-right-dot-1"></div>
+  <div class="dot upper-right-dots" id="upper-right-dot-2"></div>
+  <div class="dot upper-right-dots" id="upper-right-dot-3"></div>
+  <div class="dot upper-right-dots" id="upper-right-dot-4"></div>
+  <div class="dot upper-right-dots" id="upper-right-dot-5"></div>
+  <div class="dot upper-right-dots" id="upper-right-dot-6"></div>
+
+
+  <div class="dot right-dots" id="right-dot-1"></div>
+  <div class="dot right-dots" id="right-dot-2"></div>
+  <div class="dot right-dots" id="right-dot-3"></div>
+  <div class="dot right-dots" id="right-dot-4"></div>
+  <div class="dot right-dots" id="right-dot-5"></div>
+  <div class="dot right-dots" id="right-dot-6"></div>
+
+  <div class="dot right-lower-dots" id="right-lower-dot-1"></div>
+  <div class="dot right-lower-dots" id="right-lower-dot-2"></div>
+  <div class="dot right-lower-dots" id="right-lower-dot-3"></div>
+  <div class="dot right-lower-dots" id="right-lower-dot-4"></div>
+  <div class="dot right-lower-dots" id="right-lower-dot-5"></div>
+  <div class="dot right-lower-dots" id="right-lower-dot-6"></div>
+
+  <div class="dot lower-dots" id="lower-dot-1"></div>
+  <div class="dot lower-dots" id="lower-dot-2"></div>
+  <div class="dot lower-dots" id="lower-dot-3"></div>
+  <div class="dot lower-dots" id="lower-dot-4"></div>
+  <div class="dot lower-dots" id="lower-dot-5"></div>
+  <div class="dot lower-dots" id="lower-dot-6"></div>
+
+  <div class="dot lower-left-dots" id="lower-left-dot-1"></div>
+  <div class="dot lower-left-dots" id="lower-left-dot-2"></div>
+  <div class="dot lower-left-dots" id="lower-left-dot-3"></div>
+  <div class="dot lower-left-dots" id="lower-left-dot-4"></div>
+  <div class="dot lower-left-dots" id="lower-left-dot-5"></div>
+  <div class="dot lower-left-dots" id="lower-left-dot-6"></div>
+
+
+  <div class="dot left-dots" id="left-dot-1"></div>
+  <div class="dot left-dots" id="left-dot-2"></div>
+  <div class="dot left-dots" id="left-dot-3"></div>
+  <div class="dot left-dots" id="left-dot-4"></div>
+  <div class="dot left-dots" id="left-dot-5"></div>
+  <div class="dot left-dots" id="left-dot-6"></div>
+
+  <div class="dot left-upper-dots" id="left-upper-dot-1"></div>
+  <div class="dot left-upper-dots" id="left-upper-dot-2"></div>
+  <div class="dot left-upper-dots" id="left-upper-dot-3"></div>
+  <div class="dot left-upper-dots" id="left-upper-dot-4"></div>
+  <div class="dot left-upper-dots" id="left-upper-dot-5"></div>
+  <div class="dot left-upper-dots" id="left-upper-dot-6"></div>
+
+  <button onclick="showDots()">Show Dots</button>
+ 
+   <svg class="svg" id="svg1" height="100%"  width="100%">
+    <line x1="656" y1="93" x2="727" y2="225"/>
+   </svg>
+
+
+   <svg class="svg" id="svg2" height="100%"  width="100%">
+    <line x1="656" y1="128" x2="706" y2="251"/>
+   </svg>
+
+   <svg class="svg" id="svg3" height="100%"  width="100%">
+    <line x1="659" y1="175" x2="685" y2="285"/>
+   </svg>
+    
+   <svg class="svg" id="svg4" height="100%"  width="100%">
+    <line x1="655" y1="205" x2="798" y2="145"/>
+  </svg>
+
+  <svg class="svg" id="svg5" height="100%"  width="100%">
+    <line x1="656" y1="239" x2="780" y2="168"/>
+  </svg>
+
+  <svg class="svg" id="svg6" height="100%"  width="100%">
+    <line x1="656" y1="273" x2="755" y2="196"/>
+  </svg>
+
+  <svg class="svg" id="svg7" height="100%"  width="100%">
+    <line x1="799" y1="138" x2="759" y2="312"/>
+  </svg>
+
+  <svg class="svg" id="svg8" height="100%"  width="100%">
+    <line x1="775" y1="175" x2="725" y2="312"/>
+  </svg>
+
+  <svg class="svg" id="svg9" height="100%"  width="100%">
+    <line x1="755" y1="200" x2="690" y2="312"/>
+  </svg>
+
+ 
+  <svg class="svg" id="svg10" height="100%"  width="100%">
+    <line x1="730" y1="225" x2="869" y2="312"/>
+  </svg>
+
+  <svg class="svg" id="svg11" height="100%"  width="100%">
+    <line x1="706" y1="255" x2="835" y2="308"/>
+  </svg>
+
+  <svg class="svg" id="svg12" height="100%"  width="100%">
+    <line x1="680" y1="280" x2="795" y2="308"/>
+  </svg>
+
+  <svg class="svg" id="svg13" height="100%"  width="100%">
+    <line x1="870" y1="305" x2="725" y2="390"/>
+  </svg>
+
+  <svg class="svg" id="svg14" height="100%"  width="100%">
+    <line x1="835" y1="305" x2="710" y2="362"/>
+  </svg>
+
+  <svg class="svg" id="svg15" height="100%"  width="100%">
+    <line x1="799" y1="307" x2="685" y2="336"/>
+  </svg>
+
+  <svg class="svg" id="svg16" height="100%"  width="100%">
+    <line x1="760" y1="307" x2="799" y2="470"/>
+  </svg>
+
+  
+  <svg class="svg" id="svg17" height="100%"  width="100%">
+    <line x1="725" y1="307" x2="776" y2="445"/>
+  </svg>
+
+  <svg class="svg" id="svg18" height="100%"  width="100%">
+    <line x1="690" y1="307" x2="750" y2="410"/>
+  </svg>
+  
+  <svg class="svg" id="svg19" height="100%"  width="100%">
+    <line x1="800" y1="470" x2="655" y2="412"/>
+  </svg>
+  
+  <svg class="svg" id="svg19" height="100%"  width="100%">
+    <line x1="775" y1="442" x2="656" y2="377"/>
+  </svg>
+  <svg class="svg" id="svg20" height="100%"  width="100%">
+    <line x1="750" y1="415" x2="656" y2="340"/>
+  </svg>
+
+  <svg class="svg" id="svg21" height="100%" width="100%">
+    <line x1="725" y1="387" x2="656" y2="303"/>
+</svg>
+
+  <script>
+ function showDots() {
+  // Select the center dot by its ID
+  const centerDot = document.getElementById("center-dot");
+  centerDot.style.opacity = 1;
+
+  // Select other dots by their IDs and apply the same logic
+  const upperDots = [
+    "upper-dot-1",
+    "upper-dot-2",
+    "upper-dot-3",
+    "upper-dot-4",
+    "upper-dot-5",
+    "upper-dot-6",
+  ];
+  var delay = 100; // Adjust the delay for the desired transition speed
+  upperDots.forEach((dotId) => {
+    setTimeout(() => {
+      const dot = document.getElementById(dotId);
+      dot.style.opacity = 1;
+    }, delay);
+  delay += 500; // Increment the delay for each dot
+  });
+
+
+
+  const lowerDots = [
+    "lower-dot-1",
+    "lower-dot-2",
+    "lower-dot-3",
+    "lower-dot-4",
+    "lower-dot-5",
+    "lower-dot-6",
+    ];
+  var delay = 3000; // Adjust the delay for the desired transition speed
+  lowerDots.forEach((dotId) => {
+    setTimeout(() => {
+      const dot = document.getElementById(dotId);
+      dot.style.opacity = 1;
+    }, delay);
+
+    delay += 500
+    ; // Increment the delay for each dot
+  });
+
+
+  const rightDots = [
+    "right-dot-1",
+    "right-dot-2",
+    "right-dot-3",
+    "right-dot-4",
+    "right-dot-5",
+    "right-dot-6",
+    ];
+  var delay = 6000; // Adjust the delay for the desired transition speed
+  rightDots.forEach((dotId) => {
+    setTimeout(() => {
+      const dot = document.getElementById(dotId);
+      dot.style.opacity = 1;
+    }, delay);
+
+    delay += 500
+    ; // Increment the delay for each dot
+  });
+
+
+
+  const leftDots = [
+  "left-dot-1",
+  "left-dot-2",
+  "left-dot-3",
+  "left-dot-4",
+  "left-dot-5",
+  "left-dot-6",
+    ];
+  var delay = 9000; // Adjust the delay for the desired transition speed
+  leftDots.forEach((dotId) => {
+    setTimeout(() => {
+      const dot = document.getElementById(dotId);
+      dot.style.opacity = 1;
+    }, delay);
+
+    delay += 500
+    ; // Increment the delay for each dot
+  });
+
+
+
+  const upperrightDots = [
+  "upper-right-dot-1",
+  "upper-right-dot-2",
+  "upper-right-dot-3",
+  "upper-right-dot-4",
+  "upper-right-dot-5",
+  "upper-right-dot-6",
+    ];
+  var delay = 12000; // Adjust the delay for the desired transition speed
+  upperrightDots.forEach((dotId) => {
+    setTimeout(() => {
+      const dot = document.getElementById(dotId);
+      dot.style.opacity = 1;
+    }, delay);
+
+    delay += 500
+    ; // Increment the delay for each dot
+  }); 
+
+
+  const rightlowerDots = [
+  "right-lower-dot-1",
+  "right-lower-dot-2",
+  "right-lower-dot-3",
+  "right-lower-dot-4",
+  "right-lower-dot-5",
+  "right-lower-dot-6",
+  
+    ];
+  var delay = 15000; // Adjust the delay for the desired transition speed
+  rightlowerDots.forEach((dotId) => {
+    setTimeout(() => {
+      const dot = document.getElementById(dotId);
+      dot.style.opacity = 1;
+    }, delay);
+
+    delay += 500
+    ; // Increment the delay for each dot
+  }); 
+
+
+  const lowerleftDots = [
+  "lower-left-dot-1",
+  "lower-left-dot-2",
+  "lower-left-dot-3",
+  "lower-left-dot-4",
+  "lower-left-dot-5",
+  "lower-left-dot-6",
+
+  
+    ];
+  var delay = 18000; // Adjust the delay for the desired transition speed
+  lowerleftDots.forEach((dotId) => {
+    setTimeout(() => {
+      const dot = document.getElementById(dotId);
+      dot.style.opacity = 1;
+    }, delay);
+
+    delay += 500
+    ; // Increment the delay for each dot
+  }); 
+
+  const leftupperDots = [
+  "left-upper-dot-1",
+  "left-upper-dot-2",
+  "left-upper-dot-3",
+  "left-upper-dot-4",
+  "left-upper-dot-5",
+  "left-upper-dot-6",
+ 
+
+  
+    ];
+  var delay = 21000; // Adjust the delay for the desired transition speed
+  leftupperDots.forEach((dotId) => {
+    setTimeout(() => {
+      const dot = document.getElementById(dotId);
+      dot.style.opacity = 1;
+    }, delay);
+
+    delay += 500
+    ; // Increment the delay for each dot
+  }); 
+
+   
+  const Svg1 = [
+    "svg1",
+    "svg2",
+    "svg3",
+    "svg4",
+    "svg5",
+    "svg6",
+    "svg7",
+    "svg8",
+    "svg9",
+    "svg10",
+    "svg11",
+    "svg12",
+    "svg13",
+    "svg14",
+    "svg15",
+    "svg16",
+    "svg17",
+    "svg18",
+    "svg19",
+    "svg20",
+    "svg21",
+    "svg22",
+    "svg23",
+    "svg24",
+    "svg25",
+    "svg26",
+    "svg27",
+    "svg28",
+    "svg29",
+    "svg30",
+    "svg31",
+    "svg32",
+    "svg33",
+    "svg34",
+    "svg35",
+    "svg36",
+    "svg37",
+    "svg38",
+    "svg39",
+    "svg40",
+    "svg41",
+    "svg42",
+    "svg43",
+    "svg44",
+    "svg45",
+    "svg46",
+    "svg47",
+    "svg48",
+  ];
+  var delay = 24000; // Adjust the delay for the desired transition speed
+  Svg1.forEach((svg1) => {
+    setTimeout(() => {
+      const line = document.getElementById(svg1);
+      line.style.opacity = 1;
+    }, delay);
+  delay += 1000; // Increment the delay for each dot
+  });
+
+
+
+    }
+  </script>
+</body>
+</html>
+
+
